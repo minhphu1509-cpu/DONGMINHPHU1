@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ĐỒNG MINH PHÚ. Ai - Giải Pháp AI Đột Phá</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="v.js"></script>
+    <style>
+        body { font-family: 'Inter', sans-serif; background-color: #F2F2F7; } /* iOS Light Background */
+        .glass {
+            background: rgba(255, 255, 255, 0.75);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.4);
+        }
+        .ios-btn {
+            transition: all 0.2s cubic-bezier(0.25, 0.8, 0.25, 1);
+        }
+        .ios-btn:active {
+            transform: scale(0.96);
+            opacity: 0.9;
+        }
+        [x-cloak] { display: none !important; }
+    </style>
+</head>
+<body x-data="appCore()" x-init="initApp()" class="antialiased text-slate-800">
+
+    <!-- Navigation -->
+    <nav class="fixed top-4 left-4 right-4 z-50 glass rounded-full shadow-lg shadow-black/5 px-6 py-3 flex justify-between items-center transition-all duration-300">
+        <div class="flex items-center gap-3">
+            <template x-if="config.logo">
+                <img :src="config.logo" class="h-10 w-10 object-cover rounded-full shadow-sm" alt="Logo">
+            </template>
+            <template x-if="!config.logo">
+                <div class="h-10 w-10 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-full flex items-center justify-center text-white font-bold text-sm">
+                    AI
+                </div>
+            </template>
+            <span class="font-semibold text-lg tracking-tight" x-text="config.brandName"></span>
+        </div>
+        <div class="hidden md:flex gap-6 text-sm font-medium text-slate-600">
+            <a href="#home" class="hover:text-blue-600 transition">Trang chủ</a>
+            <a href="#services" class="hover:text-blue-600 transition">Dịch vụ</a>
+            <a href="#contact" class="hover:text-blue-600 transition">Liên hệ</a>
+        </div>
+        <a href="#contact" class="ios-btn bg-black text-white px-5 py-2 rounded-full text-sm font-medium hover:bg-slate-800">
+            Tư vấn ngay
+        </a>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="relative pt-32 pb-20 px-4 min-h-screen flex items-center justify-center overflow-hidden">
+        <!-- Dynamic Background -->
+        <div class="absolute inset-0 z-0">
+            <template x-if="config.heroImage">
+                <img :src="config.heroImage" class="w-full h-full object-cover opacity-90" alt="Hero">
+            </template>
+            <template x-if="!config.heroImage">
+                 <div class="w-full h-full bg-gradient-to-b from-blue-50 to-white"></div>
+            </template>
+            <div class="absolute inset-0 bg-gradient-to-t from-[#F2F2F7] via-transparent to-transparent"></div>
+        </div>
+
+        <div class="relative z-10 text-center max-w-4xl mx-auto space-y-8">
+            <span class="inline-block py-1 px-3 rounded-full bg-blue-100 text-blue-700 text-xs font-semibold tracking-wide uppercase mb-2">
+                Công nghệ của tương lai
+            </span>
+            <h1 class="text-5xl md:text-7xl font-bold tracking-tight text-slate-900 leading-tight" x-text="config.heroTitle">
+            </h1>
+            <p class="text-xl text-slate-600 max-w-2xl mx-auto font-light leading-relaxed" x-text="config.heroSubtitle">
+            </p>
+            <div class="flex justify-center gap-4 pt-4">
+                <a href="#contact" class="ios-btn bg-blue-600 text-white px-8 py-4 rounded-full text-lg font-semibold shadow-xl shadow-blue-500/30 hover:bg-blue-700">
+                    Bắt đầu ngay
+                </a>
+                <a href="#services" class="ios-btn glass text-slate-700 px-8 py-4 rounded-full text-lg font-semibold hover:bg-white">
+                    Tìm hiểu thêm
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services / Features (iOS Widgets Style) -->
+    <section id="services" class="py-20 px-4">
+        <div class="max-w-6xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold text-slate-900">Giải pháp toàn diện</h2>
+                <p class="mt-4 text-slate-500">Tối ưu hóa quy trình doanh nghiệp với sức mạnh AI</p>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-6">
+                <!-- Feature 1 -->
+                <div class="glass p-8 rounded-[2rem] hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1">
+                    <div class="h-12 w-12 bg-blue-50 rounded-2xl flex items-center justify-center mb-6">
+                        <svg class="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path></svg>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">Tư vấn Chiến lược AI</h3>
+                    <p class="text-slate-500 leading-relaxed">Xây dựng lộ trình chuyển đổi số phù hợp với mô hình kinh doanh.</p>
+                </div>
+                
+                <!-- Feature 2 -->
+                <div class="glass p-8 rounded-[2rem] hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1">
+                    <div class="h-12 w-12 bg-indigo-50 rounded-2xl flex items-center justify-center mb-6">
+                        <svg class="w-6 h-6 text-indigo-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">Tự động hóa Quy trình</h3>
+                    <p class="text-slate-500 leading-relaxed">Giảm thiểu tác vụ thủ công, tăng năng suất lên tới 300%.</p>
+                </div>
+
+                <!-- Feature 3 -->
+                <div class="glass p-8 rounded-[2rem] hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1">
+                    <div class="h-12 w-12 bg-purple-50 rounded-2xl flex items-center justify-center mb-6">
+                        <svg class="w-6 h-6 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path></svg>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">Phân tích Dữ liệu</h3>
+                    <p class="text-slate-500 leading-relaxed">Biến dữ liệu thô thành thông tin giá trị giúp ra quyết định chính xác.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 px-4">
+        <div class="max-w-xl mx-auto">
+            <div class="glass p-10 rounded-[2.5rem] shadow-2xl shadow-blue-900/10">
+                <h2 class="text-3xl font-bold text-center mb-8">Liên hệ hợp tác</h2>
+                
+                <form @submit.prevent="submitContact" class="space-y-5">
+                    <div>
+                        <label class="block text-sm font-medium text-slate-700 mb-2 ml-2">Họ và tên</label>
+                        <input type="text" x-model="form.name" required class="w-full px-5 py-4 bg-white/50 border-0 rounded-2xl focus:ring-2 focus:ring-blue-500 placeholder-slate-400" placeholder="Nhập tên của bạn...">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-slate-700 mb-2 ml-2">Số điện thoại</label>
+                        <input type="tel" x-model="form.phone" required class="w-full px-5 py-4 bg-white/50 border-0 rounded-2xl focus:ring-2 focus:ring-blue-500 placeholder-slate-400" placeholder="Nhập số điện thoại...">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-slate-700 mb-2 ml-2">Lời nhắn</label>
+                        <textarea x-model="form.message" required rows="4" class="w-full px-5 py-4 bg-white/50 border-0 rounded-2xl focus:ring-2 focus:ring-blue-500 placeholder-slate-400" placeholder="Bạn cần tư vấn về..."></textarea>
+                    </div>
+                    <button type="submit" class="ios-btn w-full bg-slate-900 text-white font-bold py-4 rounded-2xl shadow-lg hover:bg-black">
+                        Gửi thông tin
+                    </button>
+                </form>
+
+                <div x-show="formStatus.show" x-transition class="mt-4 p-4 rounded-2xl text-center text-sm font-medium" :class="formStatus.success ? 'bg-green-100 text-green-700' : 'bg-red-100 text-red-700'" x-text="formStatus.message"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-white border-t border-slate-200 pt-16 pb-8 px-4">
+        <div class="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
+            <div class="text-center md:text-left">
+                <h4 class="font-bold text-xl mb-1" x-text="config.brandName"></h4>
+                <p class="text-slate-500 text-sm">© 2024 All rights reserved.</p>
+            </div>
+            <div class="flex flex-col md:flex-row gap-4 md:gap-8 text-center">
+                <div class="flex items-center gap-2 text-slate-600">
+                     <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path></svg>
+                     <span x-text="config.contactPhone"></span>
+                </div>
+                <div class="flex items-center gap-2 text-slate-600">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+                    <span x-text="config.contactEmail"></span>
+               </div>
+            </div>
+        </div>
+        <!-- Admin Link Hidden visually but accessible -->
+        <div class="text-center mt-10">
+            <a href="admin.html" class="text-slate-300 hover:text-slate-500 text-xs">Admin Access</a>
+        </div>
+    </footer>
+</body>
+</html>
