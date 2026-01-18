@@ -1,43 +1,39 @@
-# Website Cá Nhân - Đồng Minh Phú
+# Đồng Minh Phú | Modern Expert Portfolio
 
-Website cá nhân (Portfolio) được xây dựng với **Next.js 14**, **Tailwind CSS**, và **Framer Motion**.
+Website cá nhân chuyên nghiệp dành cho Kiến trúc sư và Chuyên gia Xây dựng.
 
-## 🚀 Hướng dẫn Chạy Dự Án
 
-### 1. Cài đặt thư viện (nếu chưa làm)
-Chạy lệnh sau để cài đặt các gói cần thiết:
+## Getting Started
 
-**Nếu bạn dùng PowerShell và gặp lỗi `...running scripts is disabled...`**:
-Hãy dùng lệnh này thay thế:
+First, run the development server:
+
 ```bash
-cmd /c npm install
+npm run dev
+# or
+yarn dev
+# or
+pnpm dev
+# or
+bun dev
 ```
 
-Hoặc lệnh gốc:
-```bash
-npm install
-```
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-### 2. Chạy Server Development
-Để bắt đầu chạy web trên máy tính của bạn:
-```bash
-cmd /c npm run dev
-```
+You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
-Sau khi chạy, hãy mở trình duyệt và truy cập: [http://localhost:3000](http://localhost:3000)
+This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
 
-## 🛠️ Cấu trúc Dự Án
+## Learn More
 
-- `app/`: Chứa các trang (page) và layout chính.
-  - `page.tsx`: Trang chủ.
-  - `about/`: Trang Về tôi.
-  - `portfolio/`: Trang Dự án.
-  - `blog/`: Trang Blog.
-  - `contact/`: Trang Liên hệ.
-- `components/`: Các thành phần giao diện dùng chung (Header, Footer).
-- `lib/`: Các hàm tiện ích (utils).
-- `public/`: Chứa hình ảnh tĩnh.
+To learn more about Next.js, take a look at the following resources:
 
-## 🎨 Tùy chỉnh Giao diện
-- Các biến màu sắc (Navy, Gold...) được định nghĩa trong `app/globals.css`.
-- Cấu hình Tailwind nằm trong `tailwind.config.ts`.
+- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
+- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+
+You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+
+## Deploy on Vercel
+
+The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+
+Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
